@@ -25,7 +25,7 @@ of HDKD over other state-of-the-art models and its computational efficiency*
 
 ## Architecture Overview
 <div align="center">
-<img src="images/HDKD.svg" />
+<img src="Images/HDKD.svg" />
 </div>
 
 
