@@ -1,16 +1,12 @@
 import argparse
-import numpy as np
 import torch
-import os
 import torch.nn as nn
 import timm
-import json
 from timm.models import create_model
 from torchvision import datasets
 from dataset import get_transform
 from engine import  evaluate
-from student_model import StudentModel
-from teacher_model import TeacherModel
+from models import *
 
 
 def build_dataset(folder,args):

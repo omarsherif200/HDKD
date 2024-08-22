@@ -10,8 +10,7 @@ def pair(t):
 
 
 def conv_3x3_bn(inp, oup, kernel_size, downsample=False):
-    stride = 1 if downsample == False else 2
-    #stride = 1 if downsample == False else 4
+    stride = 1 if downsample == False else 2 # you can change the stride value in the stem block to 4 as discussed in the paper in the ablations
     padding_size = kernel_size//2
     return nn.Sequential(
         nn.Conv2d(inp, oup, kernel_size, stride, padding_size, bias=False),
@@ -80,9 +79,9 @@ class ChannelAttention(nn.Module):
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.max_pool = nn.AdaptiveMaxPool2d(1)
 
-        self.fc = nn.Sequential(nn.Conv2d(in_planes, in_planes // 16, 1, bias=False),
+        self.fc = nn.Sequential(nn.Conv2d(in_planes, in_planes // ratio, 1, bias=False),
                                nn.GELU(), 
-                               nn.Conv2d(in_planes // 16, in_planes, 1, bias=False))
+                               nn.Conv2d(in_planes // ratio, in_planes, 1, bias=False))
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):

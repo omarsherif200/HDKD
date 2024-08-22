@@ -8,10 +8,9 @@ class TeacherModel(nn.Module):
         num_blocks (List(int)): Number of blocks at each stage. Default: [2, 2, 3, 3]
         channels (List(int)): The output dimension at each stage. Default: [64, 96, 192, 256]
         num_classes (int): Number of classes in the dataset. Default: 7 (for HAM-10000 dataset).
-        dropout (int): Dropout rate. Default 0
 
     """
-    def __init__(self, image_size, in_channel, num_blocks, channels, num_classes=7, dropout = 0., emb_dropout = 0., **kwargs):
+    def __init__(self, image_size, in_channel, num_blocks, channels, num_classes=7, **kwargs):
         super().__init__()
         ih,iw= image_size
         block={'stem':conv_3x3_bn,'MBConv':MBConv,'MBCSA':MBCSA}

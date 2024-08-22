@@ -27,7 +27,7 @@ class StudentModel(nn.Module):
         self.stage3 = self._make_block(block['MBCSA'],channels[1],channels[2],3,num_blocks[2])
         feature_resolution = (ih//8 , iw//8)
 
-        self.DFLT_module = self._make_DFLT_module(feature_resolution,patch_size,channels[3],num_blocks[3],heads,expansion,channels[2],use_distillation)
+        self.DFLT_module = self._make_DFLT_module(feature_resolution,patch_size,channels[3],num_blocks[3],heads,expansion,channels[2],use_distillation,dim_head,dropout,emb_dropout)
         self.head_cls = nn.Linear(channels[3],num_classes)
         if self.use_distillation:
             self.head_distill = nn.Linear(channels[3],num_classes)

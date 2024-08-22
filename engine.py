@@ -18,7 +18,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module, data_loa
         inputs, labels = inputs.to(device), labels.to(device)
         optimizer.zero_grad()
         outputs = model(inputs)
-        loss=0
+        loss = 0
         if use_distillation==True:
             distillation_loss = criterion['Total_distillation_loss']
             loss = distillation_loss(inputs, outputs, labels)
@@ -59,7 +59,7 @@ def evaluate(model: torch.nn.Module, criterion: torch.nn.Module, data_loader: It
     model.eval()
     for inputs, labels in data_loader:
         inputs, labels = inputs.to(device), labels.to(device)
-        outputs=None
+        outputs = None
         if use_distillation==True:
             out_cls,out_distill = model(inputs)
             outputs = (out_cls + out_distill) / 2

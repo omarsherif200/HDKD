@@ -15,8 +15,7 @@ from timm.optim import create_optimizer
 from timm.models import create_model
 from dataset import build_dataset
 from engine import train_one_epoch, evaluate
-from student_model import StudentModel
-from teacher_model import TeacherModel
+from models import *
 from losses import LogitDistillationLoss, FeatureDistillationLoss, TotalDistillationLoss
 
 

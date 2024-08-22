@@ -2,11 +2,6 @@
 import os
 import torch
 from torchvision import datasets, transforms, utils
-from imblearn.over_sampling import SMOTE
-import json
-import ast
-import numpy as np
-from collections import Counter
 from smote import apply_smote
 
 def build_dataset(is_train,args):

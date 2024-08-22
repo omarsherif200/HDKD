@@ -75,7 +75,7 @@ class LogitDistillationLoss(torch.nn.Module):
 class FeatureDistillationLoss(torch.nn.Module):
     """
     This module wraps the Feature distillation criterion which is added to the Logit distillation loss
-    and acts as regulaization term and enhances the model generalization
+    and acts as regularization term and enhances the model generalization
     """
     def __init__(self, teacher_model: torch.nn.Module, student_model: torch.nn.Module, alpha: float,
                  teacher_layers: List[int] = [1, 2, 3], student_layers: List[int] =[1, 2, 3]):

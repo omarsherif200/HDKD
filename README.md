@@ -1,4 +1,4 @@
-# HDKD
+#HDKD
 ### **HDKD: Hybrid Data-Efficient Knowledge Distillation Network for Medical Image Classification**
 This is the official pytorch implementation of the [HDKD paper](https://arxiv.org/pdf/2407.07516).
 
@@ -25,7 +25,7 @@ of HDKD over other state-of-the-art models and its computational efficiency*
 
 ## Architecture Overview
 <div align="center">
-<img src="Images/HDKD.svg" />
+<img src="images/HDKD.svg"/>
 </div>
 
 
@@ -87,6 +87,15 @@ To train `HDKD model` on your dataset
 ```shell script
 python main.py --batch-size 16 --model HDKD  --epochs 200 --teacher-path /path/to/teacher/checkpoints/for/distillation --data-path /path/to/dataset
 ```
+
+To train with smote, you should set `use_smote = True` and you should add a JSON file called classes_distribution.json that includes each class associated with the number of augmented samples you want from smote
+```bash
+{"class1": N1,
+ "class2": N2,
+  ...........,
+ "classk": Nk}
+```
+Note: smote usage isn't recommended in many cases such as when using large and balanced datasets so it is set by default to false (`use_smote = False`)
 
 ## Evaluation
 
