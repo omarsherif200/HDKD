@@ -1,4 +1,4 @@
-#HDKD
+# HDKD
 ### **HDKD: Hybrid Data-Efficient Knowledge Distillation Network for Medical Image Classification**
 This is the official pytorch implementation of the [HDKD paper](https://arxiv.org/pdf/2407.07516).
 
@@ -25,7 +25,7 @@ of HDKD over other state-of-the-art models and its computational efficiency*
 
 ## Architecture Overview
 <div align="center">
-<img src="images/HDKD.svg"/>
+<img src="images/HDKD.svg" />
 </div>
 
 
