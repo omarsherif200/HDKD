@@ -58,8 +58,8 @@ class StudentModel(nn.Module):
         return nn.Sequential(*layers)
 
 
-    def _make_DFLT_module(self,feature_resolution,patch_size,dim,depth,heads,expansion,channels,use_distillation):
-        return DFLT(feature_resolution,patch_size,dim,depth,heads,expansion,channels,use_distillation)
+    def _make_DFLT_module(self,feature_resolution,patch_size,dim,depth,heads,expansion,channels,use_distillation,dim_head,dropout,emb_dropout):
+        return DFLT(feature_resolution,patch_size,dim,depth,heads,expansion,channels,use_distillation,dim_head,dropout,emb_dropout)
 
 
 @register_model
